@@ -15,7 +15,7 @@ The first version of the program just makes you a coffee. It prints to the stand
 
 ### Instruction
 
-1. Open the file [Taks01.java](src/main/java/com/softsorveinc/Taks01.java).
+1. Open the file [Taks01.java](src/main/java/com/softserveinc/Taks01.java).
 2. Write a program that prints the steps necessary to make coffee.
 
 ### Example
@@ -48,7 +48,7 @@ Of course, all this coffee is not needed right now, so at this stage, the coffee
 
 ### Instruction
 
-1. Open the file [Taks02.java](src/main/java/com/softsorveinc/Taks02.java).
+1. Open the file [Taks02.java](src/main/java/com/softserveinc/Taks02.java).
 2. Write a program that calculates the amount of ingredients needed to make a certain amount of coffee.
 
 ### Examples
@@ -98,7 +98,7 @@ Like in the previous stage, the coffee machine needs `200 ml` of water, `50 ml` 
 
 ### Instruction
 
-1. Open the file [Taks03.java](src/main/java/com/softsorveinc/Taks03.java).
+1. Open the file [Taks03.java](src/main/java/com/softserveinc/Taks03.java).
 2. Write a program that calculates whether it will be able to make the required amount of coffee from the specified amount of ingredients.
 
 ### Examples
