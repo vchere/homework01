@@ -34,7 +34,10 @@ Coffee is ready!
 
 <details>
     <summary>Hint</summary>
-    Simple use <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html#println(java.lang.String)">System.out.println()</a> method to print text.
+    <p>File <a href="src/main/java/com/softserveinc/Task01.java">Task01.java</a> contains static method <code>main()</code></p>.
+    <p>Inside <code>main()</code>, add statement which prints to the standard output what coffee machine is doing as it makes a coffee</p> 
+    <p>Simple use <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html#println(java.lang.String)">System.out.println()</a> 
+    method to print the text.</p>
 </details>
 
 ## Task 02
@@ -59,12 +62,8 @@ Of course, all this coffee is not needed right now, so at this stage, the coffee
 <details>
     <summary>Hint</summary>
     <ul>
-    <li>
-    To read number of cups you can use method nextInt() for object scanner
-    </li>
-    <li>
-    Use <a href="https://www.javatpoint.com/string-concatenation-in-java">string concatenation</a> to join a string and value of variable
-    </li>
+        <li>To read a number of cups you can use the method <code>scanner.nextInt()</code></li>
+        <li>Use <a href="https://www.javatpoint.com/string-concatenation-in-java">string concatenation</a> to join a string and value of variable</li>
     </ul>
 </details>
 
@@ -121,8 +120,8 @@ Like in the previous stage, the coffee machine needs `200 ml` of water, `50 ml` 
 <details>
     <summary>Hint</summary>
     <ul>
-        <li>Use static method <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#min-int-int-">Math.min()</a> to find how much cups of coffee it is possible to make </li>
-        <li>Use if ... else if ... else operator to print right message</li>
+        <li>Use static method <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#min-int-int-">Math.min()</a> to find how many cups of coffee it is possible to make </li>
+        <li>Use <code>if ... else if ... else</code> operator to print right message</li>
     </ul>
 </details>
 
