@@ -15,8 +15,8 @@ The first version of the program just makes you a coffee. It prints to the stand
 
 ### Instruction
 
-1. Open the file [Task01.java](src/main/java/com/softserveinc/Task01.java).
-2. Write a program that prints the steps necessary to make coffee.
+- [ ] Open the file [Task01.java](src/main/java/com/softserveinc/Task01.java).
+- [ ] Write a program that prints the steps necessary to make coffee.
 
 ### Example
 
@@ -31,6 +31,11 @@ Pouring coffee into the cup
 Pouring some milk into the cup
 Coffee is ready!
 ```
+
+<details>
+    <summary>Hint</summary>
+    Simple use [System.out.println()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html#println(java.lang.String)) method to print text.
+</details>
 
 ## Task 02
 
@@ -98,8 +103,13 @@ Like in the previous stage, the coffee machine needs `200 ml` of water, `50 ml` 
 
 ### Instruction
 
-1. Open the file [Task03.java](src/main/java/com/softserveinc/Task03.java).
-2. Write a program that calculates whether it will be able to make the required amount of coffee from the specified amount of ingredients.
+- [ ] Open the file [Task03.java](src/main/java/com/softserveinc/Task03.java).
+- [ ] Write a program that calculates whether it will be able to make the required amount of coffee from the specified amount of ingredients.
+
+<details>
+    <summary>Hint</summary>
+    Use [System.out.println()]() method.
+</details>
 
 ### Examples
 
@@ -190,3 +200,9 @@ Write how many cups of coffee you will need:
 >>> 0
 Yes, I can make that amount of coffee (and even 1 more than that)
 ```
+
+## Useful links
+
+1. [Java Language Basics](https://dev.java/learn/java-language-basics/)
+2. [Numbers and Strings](https://dev.java/learn/numbers-and-strings/)
+3. [Formatting](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
