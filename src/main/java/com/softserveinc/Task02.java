@@ -31,9 +31,18 @@ import java.util.Scanner;
     1875 g of coffee beans
  */
 public class Task02 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        // TODO: Write your code here
 
+    public static void main(String[] args) {
+
+        int water = 200;
+        int milk = 50;
+        int coffee = 15;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Write how many cups of coffee you will need:");
+        int cups = scanner.nextInt();
+        System.out.println("for " + cups + " cups of coffee you will need:");
+        System.out.println(water * cups + " ml of water");
+        System.out.println(milk * cups + " ml of milk");
+        System.out.println(coffee * cups + " g of coffee beans");
     }
 }
