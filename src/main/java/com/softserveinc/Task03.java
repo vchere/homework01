@@ -2,7 +2,27 @@ package com.softserveinc;
 
 import java.util.Scanner;
 
-/*Write how many ml of water the coffee machine has:
+/*A real coffee machine never has an infinite supply of water, milk, or coffee beans. And if you input a really big number, it’s almost certain that a real coffee machine wouldn't have the supplies needed to make all that coffee.
+
+In this stage, you need to improve the previous program. Now you need to input amounts of water, milk, and coffee beans that your coffee machine has at the moment.
+
+If the coffee machine has enough supplies to make the specified amount of coffee, the program should print "Yes, I can make that amount of coffee". If the coffee machine can make more than that, the program should output "Yes, I can make that amount of coffee (and even N more than that)", where N is the number of additional cups of coffee that the coffee machine can make. If the amount of resources is not enough to make the specified amount of coffee, the program should output "No, I can make only N cup(s) of coffee".
+
+Like in the previous stage, the coffee machine needs 200 ml of water, 50 ml of milk, and 15 g of coffee beans to make one cup of coffee.
+
+Instruction
+ Open the file Task03.java.
+ Write a program that calculates whether it will be able to make the required amount of coffee from the specified amount of ingredients.
+Hint
+Use static method Math.min() to find how many cups of coffee it is possible to make
+Use if ... else if ... else operator to print right message
+Examples
+The program should firstly request for water, then milk, then beans, then amount of cups.
+
+The symbol >>> represents the user input. Notice that it's not the part of the input.
+
+Example 1
+Write how many ml of water the coffee machine has:
 >>> 300
 Write how many ml of milk the coffee machine has:
 >>> 65
@@ -14,47 +34,45 @@ Yes, I can make that amount of coffee*/
 
 public class Task03 {
     public static void main(String[] args) {
-
-        int water;
-        int milk ;
-        int coffee;
-        int count;
-        Scanner scan = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Write how many ml of water the coffee machine has:");
-        System.out.println(">>>");
-        water = scan.nextInt();
+        int water = scanner.nextInt();
 
-        System.out.println("Write how many ml of the milk machine has:");
-        System.out.println(">>>");
-        milk = scan.nextInt();
+        System.out.println("Write how many ml of milk the coffee machine has:");
+        int milk = scanner.nextInt();
 
-        System.out.println("Write how many grams of coffee beans the coffee machine has:");
-        System.out.println(">>>");
-        coffee = scan.nextInt();
+        System.out.println("Write how many gram of beans the coffee machine has:");
+        int beans = scanner.nextInt();
 
-        System.out.println("Write how many cups of coffee you will need:");
-        count = scan.nextInt();
+        System.out.println("Write how many wantedCups of coffee you will need:");
+        int wantedCups = scanner.nextInt();
 
-        int minCups = 0;
-        int minCupsWater = water / 200;
-        int minCupsMilk = milk / 50;
-        int minCupsCoffee = coffee / 15;
-        minCups = minCupsWater;
-        if(minCupsMilk < minCups) {
-            minCups = minCupsMilk;
-        }
-        if(minCupsCoffee < minCups) {
-            minCups = minCupsCoffee;
-        }
-        if (count == minCups) {
+        int waterOnePortion = 200;
+        int milkOnePortion = 50;
+        int beansOnePortion = 15;
+
+        int canMakeCupsWater = water / waterOnePortion;
+        int canMakeCupsMilk = milk / milkOnePortion;
+        int canMakeCupsBeans = beans / beansOnePortion;
+        int canMakeCups = Math.min(Math.min(canMakeCupsWater, canMakeCupsMilk), canMakeCupsBeans);
+
+        //                   (1300  -    200       *      4        ) / 200
+        int leftCupsWater = (water - waterOnePortion * wantedCups) / waterOnePortion;
+        int leftCupsMilk = (milk - milkOnePortion * wantedCups) / milkOnePortion;
+        int leftCupsBeans = (beans - beansOnePortion * wantedCups) / beansOnePortion;;
+        int leftCups = Math.min(Math.min(leftCupsWater, leftCupsMilk), leftCupsBeans);
+
+        if(wantedCups * waterOnePortion <= water && wantedCups * milkOnePortion <= milk && wantedCups * beansOnePortion <= beans) {
             System.out.println("Yes, I can make that amount of coffee");
-
+        } else if (wantedCups*waterOnePortion > water) {
+            System.out.println("No, I can make only " + water / waterOnePortion + " of coffee");
+        } else if (wantedCups*waterOnePortion < water) {
+            System.out.println("Yes, I can make that amount of coffee (and even " + (water - waterOnePortion * wantedCups) / waterOnePortion + " more than that)");
         }
 
-        System.out.println("Yes, I can make that amount of coffee");
-        }
     }
+}
 
 
 
