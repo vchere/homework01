@@ -37,15 +37,19 @@ public class Task03 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Write how many ml of water the coffee machine has:");
+        System.out.print(">>> ");
         int water = scanner.nextInt();
 
         System.out.println("Write how many ml of milk the coffee machine has:");
+        System.out.print(">>> ");
         int milk = scanner.nextInt();
 
         System.out.println("Write how many gram of beans the coffee machine has:");
+        System.out.print(">>> ");
         int beans = scanner.nextInt();
 
-        System.out.println("Write how many wantedCups of coffee you will need:");
+
+        System.out.println("Write how many cups of coffee you will need:");
         int wantedCups = scanner.nextInt();
 
         int waterOnePortion = 200;
@@ -55,24 +59,33 @@ public class Task03 {
         int canMakeCupsWater = water / waterOnePortion;
         int canMakeCupsMilk = milk / milkOnePortion;
         int canMakeCupsBeans = beans / beansOnePortion;
-        int canMakeCups = Math.min(Math.min(canMakeCupsWater, canMakeCupsMilk), canMakeCupsBeans);
-
-        //                   (1300  -    200       *      4        ) / 200
-        int leftCupsWater = (water - waterOnePortion * wantedCups) / waterOnePortion;
-        int leftCupsMilk = (milk - milkOnePortion * wantedCups) / milkOnePortion;
-        int leftCupsBeans = (beans - beansOnePortion * wantedCups) / beansOnePortion;;
-        int leftCups = Math.min(Math.min(leftCupsWater, leftCupsMilk), leftCupsBeans);
-
-        if(wantedCups * waterOnePortion <= water && wantedCups * milkOnePortion <= milk && wantedCups * beansOnePortion <= beans) {
-            System.out.println("Yes, I can make that amount of coffee");
-        } else if (wantedCups*waterOnePortion > water) {
-            System.out.println("No, I can make only " + water / waterOnePortion + " of coffee");
-        } else if (wantedCups*waterOnePortion < water) {
-            System.out.println("Yes, I can make that amount of coffee (and even " + (water - waterOnePortion * wantedCups) / waterOnePortion + " more than that)");
+        int canMakeCups;
+        canMakeCups = canMakeCupsWater;
+        if (canMakeCupsMilk < canMakeCups) {
+            canMakeCups = canMakeCupsMilk;
         }
+        if (canMakeCupsBeans < canMakeCups) {
+            canMakeCups = canMakeCupsBeans;
+        }
+        if (wantedCups == canMakeCupsBeans) {
+            System.out.println("Yes, I can make that amount of coffee");
+        } else if (wantedCups > canMakeCupsBeans){
+            System.out.println("No, I can make only " + canMakeCupsBeans + " cup(s) of coffee" );
 
+        } else {
+            System.out.println("Yes, I can make that amount of coffee (and even " + (canMakeCups - wantedCups) + " more than that");
+        }
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 
