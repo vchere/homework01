@@ -44,7 +44,7 @@ public class Task03 {
         System.out.print(">>> ");
         int milk = scanner.nextInt();
 
-        System.out.println("Write how many gram of beans the coffee machine has:");
+        System.out.println("Write how many grams of coffee beans the coffee machine has:");
         System.out.print(">>> ");
         int beans = scanner.nextInt();
 
@@ -67,13 +67,13 @@ public class Task03 {
         if (canMakeCupsBeans < canMakeCups) {
             canMakeCups = canMakeCupsBeans;
         }
-        if (wantedCups == canMakeCupsBeans) {
-            System.out.println("Yes, I can make that amount of coffee");
-        } else if (wantedCups > canMakeCupsBeans){
-            System.out.println("No, I can make only " + canMakeCupsBeans + " cup(s) of coffee" );
+        if (wantedCups == canMakeCups) {
+            System.out.println(">>> Yes, I can make that amount of coffee");
+        } else if (wantedCups > canMakeCups){
+            System.out.println(">>> No, I can make only " + canMakeCups + " cup(s) of coffee" );
 
         } else {
-            System.out.println("Yes, I can make that amount of coffee (and even " + (canMakeCups - wantedCups) + " more than that");
+            System.out.println(">>> Yes, I can make that amount of coffee (and even " + (canMakeCups - wantedCups) + " more than that)");
         }
     }
 }
